@@ -1,0 +1,39 @@
+package spring;
+
+import javax.validation.constraints.Size;
+
+public class ChangePwdCommand {
+    private String currentPassword;
+    @Size(min=6)
+    private String newPassword;
+    @Size(min=6)
+    private String confirmNewPassword;
+
+    public String getCurrentPassword() {
+        return currentPassword;
+    }
+
+    public void setCurrentPassword(String currentPassword) {
+        this.currentPassword = currentPassword;
+    }
+
+    public String getNewPassword() {
+        return newPassword;
+    }
+
+    public void setNewPassword(String newPassword) {
+        this.newPassword = newPassword;
+    }
+
+    public String getConfirmNewPassword() {
+        return confirmNewPassword;
+    }
+
+    public void setConfirmNewPassword(String confirmNewPassword) {
+        this.confirmNewPassword = confirmNewPassword;
+    }
+
+    public boolean isConfirmPwdEqualToNewPwd(){
+        return confirmNewPassword.equals(newPassword);
+    }
+}
